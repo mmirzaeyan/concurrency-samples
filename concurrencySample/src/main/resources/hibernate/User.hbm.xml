@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="true" >
+	<class name="org.cocurrency.model.User" table="APP_User" >
+		<id name="id"  column="Id" type="java.lang.Long">
+			 <generator class="identity" />
+		</id>
+		
+		<property name="firstName" 					type="string" 				column="FirstName" 						not-null="true" 	length="50" />
+		<property name="lastName" 					type="string" 				column="LastName" 						not-null="true" 	length="50" />
+		<property name="userName" 					type="string"  				column="UserName" 						not-null="true" 	length="30" update="false" unique-key="uniq_User_Name"/>
+		<property name="passWord" 					type="string" 				column="PassWord" 						not-null="true" 	length="60" />
+		<property name="email" 						type="string" 				column="Email" 							not-null="false" 	length="50" />
+		<property name="enabled" 					type="boolean" 				column="IsEnabled" 						not-null="true" />
+		<property name="online" 					type="boolean" 				column="is_online" 						not-null="true" />
+		<property name="guest" 						type="boolean" 				column="is_Guest" 						not-null="true" />
+		<property name="admin" 				 		type="boolean" 				column="is_admin" 						not-null="false" 	 />
+		<property name="visitedCount" 				type="integer" 				column="VisitedCount" 					not-null="false" 	length="50" />
+		<property name="lastVisitDate" 				 							column="LastVisitDate" 					not-null="false" 	length="50" />
+        
+        
+		<property column="CreatedDate" 	name="createdDate"   		not-null="true" update="false" />
+		<property column="UpdatedDate" 	name="updatedDate" 	 		not-null="true"/>
+				
+	</class>
+</hibernate-mapping>

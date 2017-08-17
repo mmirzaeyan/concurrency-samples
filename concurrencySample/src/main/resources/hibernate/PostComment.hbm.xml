@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="true" >
+	<class name="org.cocurrency.model.PostComment" table="APP_Post_Comment" >
+		<id name="id"  column="Id" type="java.lang.Long">
+			 <generator class="identity" />
+		</id>
+		
+		<version 		name="version"           		type="integer"/>
+		
+		<property 		name="review" 					column="review" 		type="string" 							not-null="true" 	length="50" />
+        <many-to-one 	name="post"   					column="post_id"       	entity-name="org.cocurrency.model.Post" not-null="false"  />
+        
+		<property column="CreatedDate" 	name="createdDate"   		not-null="true" update="false" />
+		<property column="UpdatedDate" 	name="updatedDate" 	 		not-null="true"/>
+				
+	</class>
+</hibernate-mapping>

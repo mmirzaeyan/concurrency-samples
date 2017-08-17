@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="true" >
+	<class name="org.cocurrency.model.Post" table="APP_Post" >
+		<id name="id"  column="Id" type="java.lang.Long">
+			 <generator class="identity" />
+		</id>
+		<property name="title" 					type="string" 				column="title" 						not-null="true" 	length="50" />
+        
+        
+		<property column="CreatedDate" 	name="createdDate"   		not-null="true" update="false" />
+		<property column="UpdatedDate" 	name="updatedDate" 	 		not-null="true"/>
+				
+	</class>
+</hibernate-mapping>

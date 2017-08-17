@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class   name="org.codePlus.framework.model.core.baseInfo.BaseInformationHeader" table="App_BaseInformationHeader">
+		<id name="id" type="long" >
+			<column name="ID"  />
+			 <generator class="identity" />
+		</id>
+		<property column="Topic"   		name="topic" not-null="true" 	type="string" 	length="50"/>
+		
+		<many-to-one name="createdBy"     column="CreatedBy"       entity-name="org.codePlus.framework.model.security.User" not-null="true"  update="false" />
+		<many-to-one name="updatedBy"     column="UpdatedBy"       entity-name="org.codePlus.framework.model.security.User" not-null="true"  />
+		<property column="CreatedDate" 	name="createdDate"  type="date" 		not-null="true" update="false" />
+		<property column="UpdatedDate" 	name="updatedDate" 	type="date" 		not-null="true"/>		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,74 @@
+spring:
+    profiles:
+        active: prod
+    application:
+        name: CodePlus
+    jpa:
+        open-in-view: true
+        hibernate:
+            ddl-auto: update
+            dialect : org.hibernate.dialect.MySQLDialect
+            show_sql: true
+            naming:
+              strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+              dialect : org.hibernate.dialect.MySQLDialect
+              show_sql: true
+              current_session_context_class:  org.springframework.orm.hibernate4.SpringSessionContext
+    messages:
+        basename: appconfig
+    mvc:
+        favicon:
+            enabled: false
+    aop:
+        auto: true
+    datasource:
+        url: jdbc:mysql://localhost:3306/BookShop
+        username: root
+        password: rootroot
+        hikari:
+            minimum-idle: 1
+            maximum-pool-size: 50
+            pool-name: yourPoolName
+            maxLifetime:  2000000
+            idleTimeout:  30000
+            connectionTimeout:  30000
+        
+server:
+    compression:
+        enabled: true
+    port: 80
+    servlet-path: /rest
+    
+# Hibernate
+hibernate:
+    transaction.factory_class:  org.hibernate.transaction.JTATransactionFactory
+    current_session_context_class:  jta
+    ddl-auto : update
+entitymanager:
+    packagesToScan: org.codePlus.*
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    async:
+        corePoolSize: 2
+        maxPoolSize: 50
+        queueCapacity: 10000
+    cors: #By default CORS are not enabled. Uncomment to enable.
+        allowed-origins: "*"
+        allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        allowed-headers: "*"
+        exposed-headers:
+        allow-credentials: true
+        max-age: 1800
+    logging:
+        spectator-metrics: # Reports Spectator Circuit Breaker metrics in the logs
+            enabled: true
+            # edit spring.metrics.export.delay-millis to set report frequency
+    security:
+        xss: 
+            active: true
+            path-ignored: "/rest/attachment"

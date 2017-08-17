@@ -1,0 +1,35 @@
+ #openNewButton { 
+	    display:inline-block;
+	    float:right;
+	    background-image:url(../../../Content/images/button.gif);
+	    background-repeat:no-repeat;
+	    vertical-align:top;
+	    background-color:transparent;
+	    position:relative;
+	    z-index:30;
+	    cursor:pointer;
+	    width:85px;
+		height:24px;
+		text-align: center;
+	}
+	#openNewContainer {
+	    position:relative;
+	    float:right;
+	    font-size:12px;
+	}
+	#openBox {
+	    position:absolute;
+	    top:34px;
+	    right:0;
+	    display:none;
+	    z-index:29;
+	}
+	#openNewForm {
+	    width:100px; 
+	    border:1px solid #000;
+	    border-radius:3px 0 3px 3px;
+	    -moz-border-radius:3px 0 3px 3px;
+	    margin-top:-12px;
+	    background:#ccd8e7;
+	    padding:4px;
+	}

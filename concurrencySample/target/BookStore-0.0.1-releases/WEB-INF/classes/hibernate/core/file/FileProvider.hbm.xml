@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+		<class name="org.codePlus.framework.model.core.file.FileProvider" table="Core_file">
+		<id name="id" column="Id" type="long">
+			 <generator class="identity" />
+		</id>
+		<property 	column="File_Name" 			name="fileName" 		type="string" />
+		<property 	column="File_Type" 			name="fileType" 		type="string" />
+		<property 	column="File_Code" 			name="fileCode" 		type="string" />
+		<property 	column="Attachment" 		name="attachment" 		type="blob" />		
+		<property 	column="AcceptDate"  		name="acceptDate"  		type="string" 		not-null="false"/>
+		
+		<many-to-one name="createdBy"     column="CreatedBy"       entity-name="org.codePlus.framework.model.security.User" not-null="true"  update="false" />
+		<many-to-one name="updatedBy"     column="UpdatedBy"       entity-name="org.codePlus.framework.model.security.User" not-null="true"  />
+		<property column="CreatedDate" 	name="createdDate"  type="date" 		not-null="true" update="false" />
+		<property column="UpdatedDate" 	name="updatedDate" 	type="date" 		not-null="true"/>	
+		<property column="Ip" 			name="ip"  			type="string" 		not-null="true"   	update="false"/>		
+	</class>
+</hibernate-mapping>

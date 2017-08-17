@@ -1,0 +1,10 @@
+{
+  "groups": [{
+    "name": "spring.datasource",
+    "sourceMethod": "dataSource()",
+    "sourceType": "org.cocurrency.config.DatabaseConfiguration",
+    "type": "javax.sql.DataSource"
+  }],
+  "hints": [],
+  "properties": []
+}

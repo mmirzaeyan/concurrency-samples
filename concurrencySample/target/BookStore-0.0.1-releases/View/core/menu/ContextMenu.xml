@@ -1,0 +1,6 @@
+<menu id="0" >
+		<item id="1" text="درج"  	img="../../../Scripts/MyJQuery/dhtmlxTree/dhtmlxMenu/Image/page_add.png"  ></item>
+		<item id="2" text="ویرایش" 	img="../../../Scripts/MyJQuery/dhtmlxTree/dhtmlxMenu/Image/page_edit.png"  ></item>
+		<item id="4" text="تنظیمات" 	img="../../../Scripts/MyJQuery/dhtmlxTree/dhtmlxMenu/Image/page_edit.png"  ></item>
+		<item id="3" text="حذف"  	img="../../../Scripts/MyJQuery/dhtmlxTree/dhtmlxMenu/Image/page_delete.png"   ></item>
+</menu>

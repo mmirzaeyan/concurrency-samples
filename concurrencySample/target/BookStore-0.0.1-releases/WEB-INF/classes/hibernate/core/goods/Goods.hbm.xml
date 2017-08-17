@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.codePlus.core.goods.Goods" table="Core_Goods">
+        <id name="id" type="java.lang.Long" >
+			<column name="ID"  />
+			 <generator class="identity" />
+        </id> 
+        <property name="goodsType" column="Goods_Type" not-null="false"  > 
+			<type name="org.hibernate.type.EnumType" >
+				<param name="enumClass">org.codePlus.core.goods.GoodsType</param>
+			</type>
+		</property>
+	    <property name="code"        				column="code"            				type="string" unique-key="unique_goods_code"/>
+		<property name="price"        				column="price"            				type="double" />
+		<property name="visitCount"        			column="visit_Count"            		type="long" />
+		<property name="mainPictureCode"  			formula="(select p.picture_Code from Core_Goods_Pics p where p.goods_Id=id and p.is_Main=1)" />
+		
+        <many-to-one 	name="createdBy"     	column="CreatedBy"       entity-name="org.codePlus.framework.model.security.User" 	not-null="true"  update="false" />
+		<many-to-one 	name="updatedBy"     	column="UpdatedBy"       entity-name="org.codePlus.framework.model.security.User" 	not-null="true"  />
+		<property 		name="createdDate"		column="CreatedDate" 	 type="date" 	not-null="true"  	update="false" />
+		<property 		name="updatedDate"		column="UpdatedDate" 	 type="date" 	not-null="true"/>	
+		<property 		name="ip"				column="Ip" 			 type="string" 	not-null="true"   	update="false"/>
+        
+        <joined-subclass name="org.codePlus.core.goods.products.Book" 			extends="org.codePlus.core.goods.Goods" table="Core_Goods_Book">
+            <key column="Goods_Id" />
+      		<property name="name"        				column="name"            				type="string"	 unique-key="unique_Book"	not-null="true" />
+      		<property name="isbn"        				column="isbn"            				type="string"  	 unique-key="unique_isbn"					/>
+      		<property name="printYear"        			column="print_Year"            			type="integer"	 											/>
+      		<property name="author"        				column="author"            				type="string"  	 not-null="true" 							/>
+      		<property name="translator"        			column="translator"            			type="string"  												/>
+      		<property name="pagesCount"        			column="pages_Count"            		type="integer"	 											/>
+      		<property name="bookWeight"        			column="book_Weight"            		type="double"	 											/>
+      	 	<property name="publishEdition"        		column="publish_Edition"           		type="integer"	 unique-key="unique_Book"					/>
+      		<property name="description"        		column="description"            		type="string"												/>
+      		
+      		<many-to-one name="bookFormatType"        	column="book_Format_Type_Id"            entity-name="org.codePlus.framework.model.core.baseInfo.BaseInformation" />
+      		<many-to-one name="bookType"        		column="book_Type_Id"            		entity-name="org.codePlus.framework.model.core.baseInfo.BaseInformation" />
+      		<many-to-one name="lesson"        			column="lesson_Id"            			entity-name="org.codePlus.framework.model.core.baseInfo.BaseInformation" />
+      		
+      		<many-to-one name="publisher"        		column="publisher_Id"            		entity-name="org.codePlus.core.publisher.Publisher" not-null="true" unique-key="unique_Book"	/>
+      		<many-to-one name="publisherProduct"        column="publisher_Product_Id"           entity-name="org.codePlus.core.publisher.PublisherProduct" 			unique-key="unique_Book"	/>
+      		
+      		 <set name="grade" table="STR_Books_Grade"   >
+		            <key>
+		                <column name="Book_Id" not-null="true" />
+		            </key>
+		            <many-to-many entity-name="org.codePlus.framework.model.core.baseInfo.BaseInformation">
+		                <column name="Grade_Id" not-null="true" />
+		            </many-to-many>
+		      </set>
+		      
+		       <set name="field" table="STR_Books_Field"   >
+		            <key>
+		                <column name="Book_Id" not-null="true" />
+		            </key>
+		            <many-to-many entity-name="org.codePlus.framework.model.core.baseInfo.BaseInformation">
+		                <column name="Field_Id" not-null="true" />
+		            </many-to-many>
+		      </set>
+      		
+        </joined-subclass>
+        
+        
+        
+    
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+@font-face {
+	font-family: "BCMSFont";
+	font-style: normal;
+	font-weight: normal;
+	src: url("Yekan.woff") format("woff");
+}
+
+@FONT-FACE {
+	font-family: BaharanFont;
+	src: url('BYekan.ttf') format('truetype');
+}
+
+@FONT-FACE {
+	font-family: BaharanBZar;
+	src: url('BZar.ttf') format('truetype');
+}
+
+@FONT-FACE {
+	font-family: BaharanBTitrBold;
+	src: url('BTitrBold.ttf') format('truetype');
+}
+
+@FONT-FACE {
+	font-family: BaharanBNazanin;
+	src: url('BNazanin.ttf') format('truetype');
+}

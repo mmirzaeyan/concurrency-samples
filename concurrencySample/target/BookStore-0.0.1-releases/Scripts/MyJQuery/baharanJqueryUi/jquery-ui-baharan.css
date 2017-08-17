@@ -1,0 +1,26 @@
+@CHARSET "windows-1256";
+/*author:m.yaghoubi*/
+.ui-tabs .ui-tabs-nav li{
+	float:right;
+}
+.ui-menu .ui-menu-item{
+	text-align: right;
+	font-size: 10pt;
+}
+.actionBtn{
+	cursor: pointer;
+}
+
+.persianCalender .hasDatepicker{
+	text-align: left;
+}
+.numberOnly{
+	text-align: left;
+
+}
+.persianOnly{
+	text-align: right;
+}
+.englishOnly{
+	text-align: left;
+}

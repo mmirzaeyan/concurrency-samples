@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+@FONT-FACE {
+   	font-family: BaharanFont;
+   	src: url('../font/BYekan.ttf') format('truetype');
+}
+
+@FONT-FACE {
+   	font-family: BaharanBZar;
+   	src: url('../font/BZar.ttf') format('truetype');
+}
+
+@FONT-FACE {
+   	font-family: BaharanBTitrBold;
+   	src: url('../font/BTitrBold.ttf') format('truetype');
+}
+
+@FONT-FACE {
+   	font-family: BaharanBNazanin;
+   	src: url('../font/BNazanin.ttf') format('truetype');
+}

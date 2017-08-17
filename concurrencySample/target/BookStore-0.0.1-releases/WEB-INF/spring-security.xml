@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+      
+<http auto-config="true" >
+   <headers>
+        <frame-options policy="SAMEORIGIN"/>
+    </headers>
+		<csrf disabled="true"/>
+        <intercept-url pattern="/Login.jsp" 		access="permitAll" />
+        <intercept-url pattern="/assets/**" 		access="permitAll" />
+        <intercept-url pattern="/Scripts/**" 		access="permitAll" />
+        <intercept-url pattern="/NewTheme/**" 		access="permitAll" />
+        <intercept-url pattern="/rest/**/front/**" 	access="permitAll" />
+        <intercept-url pattern="/View/frontEnd/**" 	access="permitAll" />
+        <intercept-url pattern="/View/adminView/**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/rest/**" 			access="hasRole('ADMIN')" />
+         <intercept-url pattern="/admin/**" 		access="hasRole('ADMIN')" />
+        <intercept-url pattern="/**" 				access="permitAll" />
+        
+        <form-login  login-page="/View/frontEnd/login.jsp"
+                     username-parameter="j_username"
+                     password-parameter="j_password"
+                     always-use-default-target="true"   
+                     login-processing-url="/perform_login"
+                     authentication-failure-url="/View/frontEnd/login.jsp"
+                     authentication-success-handler-ref="customAuthenticationSuccessHandler" />
+        
+    </http>
+   
+	<global-method-security pre-post-annotations="enabled" secured-annotations="enabled"  />
+	
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailsServicess" >
+        
+        <password-encoder hash="sha" />
+        </authentication-provider>
+    </authentication-manager>
+    
+   
+	
+
+</beans:beans>

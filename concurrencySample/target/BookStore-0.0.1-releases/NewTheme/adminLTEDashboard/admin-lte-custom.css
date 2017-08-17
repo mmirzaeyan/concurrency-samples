@@ -1,0 +1,60 @@
+/**{
+    direction: rtl;
+}*/
+
+/*------------------ multiselect(select2) ----------------------*/
+.text-icon{
+    font-family: BYekan;
+    padding: 0 5px;
+}
+.form-control {
+    border-radius: 5px !important;
+    padding-right: 10px !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border-radius: 4px !important;
+}
+.select2-dropdown .select2-search__field:focus, .select2-search--inline .select2-search__field:focus {
+    border: none !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+    direction: rtl;
+    float: right;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    margin-left: 5px;
+    margin-right: 0 !important;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    direction: rtl;
+}
+input {
+    font-family: byekan !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    padding-bottom: 5px !important;
+}
+
+.select2-container {
+    margin: 2px 0 !important;
+}
+
+
+.btn-social {
+    text-align: right !important;
+    padding-right: 44px !important;
+
+}
+.btn-social > :first-child {
+    right: 0;
+}
+
+/* ---------- table from tables.css -----------*/
+th {
+    text-align: right !important;
+}

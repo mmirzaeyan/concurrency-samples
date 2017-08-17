@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body {
+    background-image: url("../../../images/frontEnd/login/pexels-photo-110252(1).jpeg") !important;
+    height: 100% !important;
+    position: relative !important;
+    opacity: 0.95 !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+#site-title {
+    font-size: 40px !important;
+}
+
+#loginForm .form-control, #registerForm .form-control {
+    padding-right: 35px !important;
+}
+
+.login-logo > a, .register-logo > a {
+    color: #ffffff !important;
+}
+
+#login-button {
+    padding-left: 0 !important;
+}
+
+#remember-me {
+    padding-right: 0 !important;
+}
+
+#register-button{
+    padding: 10px 0 !important;
+}
+
+#login-button button ,#register-button button{
+    border-radius: 4px;
+}
+
+.login-box-body {
+    padding: 30px 20px 110px 20px !important;
+}
+
+.register-box-body {
+    padding: 30px 20px 140px 20px !important;
+}
+
+.login-box-body > a {
+    padding: 5px 0;
+}
+

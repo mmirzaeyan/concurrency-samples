@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.codePlus.framework.model.order.OrderItem" table="App_Order_Item">
+        
+        <id name="id" type="java.lang.Long" >
+			<column name="ID"  />
+			 <generator class="identity" />
+        </id> 
+        
+        <many-to-one 	name="order"     	column="Order_Id"       entity-name="org.codePlus.framework.model.order.Order" 	not-null="true"  unique-key="order-item"	 />
+        <many-to-one 	name="goods"     	column="goods_Id"       entity-name="org.codePlus.core.goods.products.Book" 	not-null="true"  unique-key="order-item"	 />
+		<property 		name="quantity"    	column="quantity"   	type="integer"  not-null="true"  />
+		
+		
+		
+        <many-to-one 	name="createdBy"     	column="CreatedBy"       entity-name="org.codePlus.framework.model.security.User" 	not-null="true"  update="false" />
+		<many-to-one 	name="updatedBy"     	column="UpdatedBy"       entity-name="org.codePlus.framework.model.security.User" 	not-null="true"  />
+		<property 		name="createdDate"		column="CreatedDate" 	 type="date" 	not-null="true"  	update="false" />
+		<property 		name="updatedDate"		column="UpdatedDate" 	 type="date" 	not-null="true"/>	
+		<property 		name="ip"				column="Ip" 			 type="string" 	not-null="true"   	update="false"/>
+    
+    </class>
+</hibernate-mapping>
