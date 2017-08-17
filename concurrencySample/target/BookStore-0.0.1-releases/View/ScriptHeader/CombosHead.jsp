@@ -1,2 +1,0 @@
-<script type="text/javascript" src="<c:url value = '/Scripts/MyJQuery/chosen/chosen.jquery.min.js'/>"> </script>
-<link rel="stylesheet" type="text/css" href="<c:url value = '/Scripts/MyJQuery/chosen/chosen.css'/>" />
